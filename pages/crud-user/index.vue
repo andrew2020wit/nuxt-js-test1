@@ -5,7 +5,7 @@
     h2 List
     ol
       li(v-for="item in users" :key="item.id")
-        NuxtLink(:to="baseUrl+item.id") {{item.name}}
+        NuxtLink(:to="baseUrl+item.id") {{item.name}}, age: {{item.age}}
 </template>
 
 <script>

@@ -19,7 +19,7 @@
         max="100"
         required
       />
-      <input type="submit" value="Send" />
+      <input type="submit" value="Create" />
     </form>
   </div>
 </template>
