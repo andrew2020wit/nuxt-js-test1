@@ -21,6 +21,7 @@
       />
       <input type="submit" value="Update" />
     </form>
+    <button @click="deleteEntity">Delete User</button>
   </div>
 </template>
 
@@ -41,7 +42,6 @@ export default {
   },
   methods: {
     async onSubmit() {
-      console.log('name', this.name, this.age)
       const point = apiUrl + '/main/crud-rest/0/user/' + this.$route.params.id
       await this.$axios
         .$put(point, {
@@ -53,6 +53,13 @@ export default {
           console.log(response)
           this.$router.go()
         })
+    },
+    async deleteEntity() {
+      const point = apiUrl + '/main/crud-rest/0/user/' + this.$route.params.id
+      await this.$axios.$delete(point).then((response) => {
+        console.log(response)
+        this.$router.push({ path: '/crud-user' })
+      })
     },
   },
 }
